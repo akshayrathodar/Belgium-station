@@ -1,0 +1,81 @@
+@use './colors' as colors;
+@import './mixins';
+
+.backgrounddiv {
+    background-color: colors.$palate-one-bg-color;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    min-height: 100vh;
+    background-color: colors.$palate-two-bg-color;
+
+    @include desktop() {
+        grid-template-columns: auto auto auto;
+    }
+
+    @include tablet() {
+        grid-template-columns: auto auto;
+    }
+
+    @include mobile() {
+        grid-template-columns: auto;
+    }
+
+}
+
+.cell {
+    border: 1px solid colors.$white;
+    margin: 20px 25px 0 25px;
+    height: 100px;
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    top: -25px;
+    background: colors.$gray;
+    opacity: 0.7;
+    padding: 10px;
+    right: -25px;
+    font-size: 0.8rem;
+}
+
+.dflex {
+    display: flex;
+}
+
+.table {
+    border: 1px solid colors.$white;
+    width: 100%;
+
+    th {
+        font-weight: 700;
+        padding: 20px 0;
+        text-align: justify;
+    }
+
+    input {
+        padding: 8px;
+        font-size: 1rem;
+        margin: 2px 0;
+    }
+
+    a {
+        color: blue;
+    }
+}
+
+.searchsection {
+    display: flex;
+    justify-content: center;
+    input {
+        padding: 18px;
+        margin: 5px;
+        font-size: 2.5rem;
+    }
+}
